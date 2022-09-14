@@ -1,16 +1,13 @@
 # image_editing_app
 
-A new Flutter project.
-
+Image editing app by Ayush Singh
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+email: ayushsingh2357@gmail.com
+Contact me at https://instagram.com/voyage_finder
 
-A few resources to get you started if this is your first Flutter project:
+In this project, we have created an image editing app using flutter
+We have not used any pre made libraries for this purpose and its using
+draggable tool of flutter
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+We have only used two API's one for adding image and another for saving image

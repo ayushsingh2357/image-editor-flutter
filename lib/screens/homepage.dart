@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:image_editing_app/screens/edit_image_screen.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -7,7 +9,17 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: IconButton(onPressed: (() {}), icon: const Icon(Icons.upload)),
+        child: IconButton(
+            onPressed: () async {
+              XFile? file =
+                  await ImagePicker().pickImage(source: ImageSource.gallery);
+              if (file != null) {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) =>
+                        EditImageScreen(selectedImage: file.path)));
+              }
+            },
+            icon: const Icon(Icons.upload)),
       ),
     );
   }

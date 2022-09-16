@@ -19,7 +19,9 @@ class Homepage extends StatelessWidget {
                         EditImageScreen(selectedImage: file.path)));
               }
             },
-            icon: const Icon(Icons.upload)),
+            icon: const Icon(
+              Icons.upload,
+            )),
       ),
     );
   }

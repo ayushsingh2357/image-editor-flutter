@@ -14,6 +14,7 @@ class Homepage extends StatelessWidget {
               XFile? file =
                   await ImagePicker().pickImage(source: ImageSource.gallery);
               if (file != null) {
+                
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) =>
                         EditImageScreen(selectedImage: file.path)));

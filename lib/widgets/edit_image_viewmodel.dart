@@ -6,6 +6,90 @@ import 'package:image_editing_app/widgets/default_button.dart';
 abstract class EditImageViewModel extends State<EditImageScreen> {
   TextEditingController textEditingController = TextEditingController();
   TextEditingController creatorText = TextEditingController();
+  int currentIndex = 0;
+  setCurrentIndex(BuildContext context, index) {
+    setState(() {
+      currentIndex = index;
+    });
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        duration: Duration(milliseconds: 500),
+        content: Text(
+          'Selected for styling',
+          style: TextStyle(fontSize: 16),
+        )));
+  }
+
+  changeTextColor(Color color) {
+    setState(() {
+      texts[currentIndex].color = color;
+    });
+  }
+
+  incrementFontSize() {
+    setState(() {
+      texts[currentIndex].fontSize = texts[currentIndex].fontSize + 5;
+    });
+  }
+
+  decrementFontSize() {
+    setState(() {
+      if (texts[currentIndex].fontSize > 10) {
+        texts[currentIndex].fontSize = texts[currentIndex].fontSize - 5;
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            duration: Duration(milliseconds: 500),
+            content: Text(
+              "Not allowed",
+              style: TextStyle(fontSize: 16),
+            )));
+      }
+    });
+  }
+
+  alignTextCenter() {
+    setState(() {
+      texts[currentIndex].textAlign = TextAlign.center;
+    });
+  }
+
+  alignTextLeft() {
+    setState(() {
+      texts[currentIndex].textAlign = TextAlign.left;
+    });
+  }
+
+  alignTextRight() {
+    setState(() {
+      texts[currentIndex].textAlign = TextAlign.right;
+    });
+  }
+
+  boldText() {
+    setState(() {
+      if (texts[currentIndex].fontWeight != FontWeight.bold) {
+        texts[currentIndex].fontWeight = FontWeight.bold;
+      } else {
+        texts[currentIndex].fontWeight = FontWeight.normal;
+      }
+    });
+  }
+
+  italicText() {
+    setState(() {
+      if (texts[currentIndex].fontStyle != FontStyle.italic) {
+        texts[currentIndex].fontStyle = FontStyle.italic;
+      } else {
+        texts[currentIndex].fontStyle == FontStyle.normal;
+      }
+    });
+  }
+
+  underlineText() {
+    setState(() {
+      texts[currentIndex].textDecoration = TextDecoration.underline;
+    });
+  }
+
   List<TextInfo> texts = [];
   addNewText(BuildContext context) {
     setState(() {
@@ -16,8 +100,9 @@ abstract class EditImageViewModel extends State<EditImageScreen> {
           color: Colors.white,
           fontWeight: FontWeight.normal,
           fontStyle: FontStyle.normal,
-          fontSize: 15,
-          textAlign: TextAlign.left));
+          fontSize: 30,
+          textAlign: TextAlign.left,
+          textDecoration: TextDecoration.none));
       Navigator.of(context).pop();
     });
   }

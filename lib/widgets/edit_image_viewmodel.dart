@@ -79,14 +79,24 @@ abstract class EditImageViewModel extends State<EditImageScreen> {
       if (texts[currentIndex].fontStyle != FontStyle.italic) {
         texts[currentIndex].fontStyle = FontStyle.italic;
       } else {
-        texts[currentIndex].fontStyle == FontStyle.normal;
+        texts[currentIndex].fontStyle = FontStyle.normal;
       }
     });
   }
 
   underlineText() {
     setState(() {
-      texts[currentIndex].textDecoration = TextDecoration.underline;
+      if (texts[currentIndex].textDecoration != TextDecoration.underline) {
+        texts[currentIndex].textDecoration = TextDecoration.underline;
+      } else {
+        texts[currentIndex].textDecoration = TextDecoration.none;
+      }
+    });
+  }
+
+  addNewLine() {
+    setState(() {
+      texts[currentIndex].text = texts[currentIndex].text.replaceAll(' ', '\n');
     });
   }
 

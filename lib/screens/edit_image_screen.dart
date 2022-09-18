@@ -149,7 +149,9 @@ class _EditImageScreenState extends EditImageViewModel {
                 tooltip: 'Align Right',
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  boldText();
+                },
                 icon: const Icon(
                   Icons.format_bold,
                   color: Colors.white,
@@ -157,7 +159,9 @@ class _EditImageScreenState extends EditImageViewModel {
                 tooltip: 'Bold',
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  italicText();
+                },
                 icon: const Icon(
                   Icons.format_italic,
                   color: Colors.white,
@@ -165,7 +169,9 @@ class _EditImageScreenState extends EditImageViewModel {
                 tooltip: 'Italic',
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  underlineText();
+                },
                 icon: const Icon(
                   Icons.format_underline,
                   color: Colors.white,
@@ -173,7 +179,9 @@ class _EditImageScreenState extends EditImageViewModel {
                 tooltip: 'Underline',
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  addNewLine();
+                },
                 icon: const Icon(
                   Icons.space_bar,
                   color: Colors.white,

@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Image Editor',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: ThemeData.light(),
         home: const Homepage());
   }
 }

@@ -16,3 +16,5 @@ We have used image_picker to select the image to edit, permission_handler to han
 
 I have learnt about lots of stuffs while doing this project from null safety and the life cycle of widgets
 
+I have also learnt about the renderBox
+
